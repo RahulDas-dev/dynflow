@@ -1,0 +1,6 @@
+### Python template
+
+__pycache__/
+.ipynb_checkpoints
+.venv
+.ruff_cache/

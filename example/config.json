@@ -1,0 +1,28 @@
+{
+    "component.ComponentAbc": {
+        "factory": "component_abc",
+        "arg1": "path/to/some/file"
+    },
+    "component.ComponentCdf": {
+        "factory": "component_cdf"
+    },
+    "component.ComponentEfg": {
+        "factory": "component_efg"
+    },
+    "component.ComponentHij": {
+        "factory": "component_hij"
+    },
+    "component.ComponentXyz": {
+        "factory": "component_xyz"
+    },
+    "pipeline": {
+      "components": [
+        "ComponentAbc",
+        "ComponentCdf",
+        "ComponentEfg",
+        "ComponentHij",
+        "ComponentXyz"
+      ]
+    }
+  }
+
