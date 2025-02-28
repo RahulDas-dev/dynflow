@@ -33,11 +33,11 @@ jobs:
 
     - name: Publish to PyPI for Release Branch
       if: github.ref == 'refs/heads/release'
-      run: poetry publish --build
+      run: uv publish --build
     
     - name: Build for main Branch   
       if: github.ref == 'refs/heads/main'
-      run: poetry build
+      run: uv build
     
     - name: Create GitHub Release
       if: github.ref == 'refs/heads/release'
