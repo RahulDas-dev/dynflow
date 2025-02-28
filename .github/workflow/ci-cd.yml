@@ -15,7 +15,7 @@ jobs:
       with:
         python-version: 3.11
         
-    - name: Install Poetry
+    - name: Install UV
       run: pip install uv
 
     - name: Check out the code
@@ -29,11 +29,12 @@ jobs:
 
     - name: Configure PyPI token
       if: github.ref == 'refs/heads/release'
-      run: poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}  
-
+      env:
+        PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+      
     - name: Publish to PyPI for Release Branch
       if: github.ref == 'refs/heads/release'
-      run: uv publish --build
+      run: uv publish --token ${{ secrets.PYPI_API_TOKEN }}  
     
     - name: Build for main Branch   
       if: github.ref == 'refs/heads/main'
